@@ -17,6 +17,10 @@ const JobSchema = new Schema(
         required: true,
       },
     ],
+    experienceLevel: {
+      type: Number,
+      required: true,
+    },
     salary: {
       type: Number,
       required: true,
@@ -33,7 +37,7 @@ const JobSchema = new Schema(
       type: Number,
       required: true,
     },
-    company: {
+    companyId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Company",
       required: true,
