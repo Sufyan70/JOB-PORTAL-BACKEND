@@ -37,7 +37,7 @@ const JobSchema = new Schema(
       type: Number,
       required: true,
     },
-    companyId: {
+    company: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Company",
       required: true,
@@ -47,10 +47,10 @@ const JobSchema = new Schema(
       ref: "User",
       required: true,
     },
-    applications: {
+    applications: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Application",
-    },
+    }],
   },
   { timestamps: true }
 );

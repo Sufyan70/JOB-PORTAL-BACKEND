@@ -6,6 +6,7 @@ const connectDb = require("./utils/db");
 const userRoute = require("./routes/userRoutes");
 const companyRoute = require("./routes/companyRoutes");
 const jobRoute = require("./routes/jobRoutes");
+const applicationRoute = require("./routes/applicationRoutes");
 
 dotenv.config({});
 
@@ -31,6 +32,7 @@ const PORT = 8000
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
+app.use("/api/v1/application", applicationRoute);
 
 app.listen(PORT, () => {
   connectDb();

@@ -92,6 +92,7 @@ exports.login = async (req, res) => {
       .send({
         message: `welcome back ${user.fullname}`,
         success: true,
+        user
       });
   } catch (error) {
     console.log(error);

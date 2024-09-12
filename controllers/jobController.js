@@ -38,7 +38,7 @@ exports.postJob = async (req, res) => {
       location,
       jobType,
       position,
-      companyId: companyId,
+      company: companyId,
       createdby: userId,
     });
     return res.status(201).send({
@@ -64,7 +64,9 @@ exports.getAllJobs = async (req, res) => {
         { description: { $regex: keyword, $options: "i" } },
       ],
     };
-    const jobs = await Job.find(query);
+    const jobs = await Job.find(query).populate({
+        path:"company"
+    }).sort({createdAt: -1})
     if (!jobs) {
       return res.status(404).send({
         message: "Jobs not Found",

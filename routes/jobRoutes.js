@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.route('/postJob').post(isAuthenticated,postJob)
 router.route('/getJobs').get(isAuthenticated,getAllJobs)
-router.route('/get/:id').post(isAuthenticated,getJobById)
-router.route('/getAdminJobs').post(isAuthenticated,getAdminJobs)
+router.route('/get/:id').get(isAuthenticated,getJobById)
+router.route('/getAdminJobs').get(isAuthenticated,getAdminJobs)
  
 module.exports = router
